@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import os
 
 app = Flask(__name__)
+CORS(app)  # erlaubt Requests von GitHub Pages
 
 # 🔐 API Key aus Environment Variable
 API_KEY = os.environ.get("OPENWEATHER_KEY")
@@ -35,3 +37,4 @@ def weather():
 if __name__ == "__main__":
     # Port 10000 von Render empfohlen
     app.run(host="0.0.0.0", port=10000)
+
