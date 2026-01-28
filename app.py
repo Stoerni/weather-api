@@ -9,6 +9,12 @@ API_KEY = os.environ.get("OPENWEATHER_KEY")
 if not API_KEY:
     raise ValueError("OPENWEATHER_KEY ist nicht gesetzt!")
 
+# Root Route für Info
+@app.route("/")
+def index():
+    return "Weather API is running. Use /weather?city=CityName"
+
+# Wetter-Endpoint
 @app.route("/weather")
 def weather():
     city = request.args.get("city", "Barcelona")
