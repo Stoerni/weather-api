@@ -1,1 +1,1 @@
-weather.php für render.com backend
+app.py für render.com backend um OpenWeather key zu sichern
